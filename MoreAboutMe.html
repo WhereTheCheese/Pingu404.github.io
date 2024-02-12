@@ -2,10 +2,71 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>This is anyoher page</title>
+    <title>Another Page</title>
+
+    <style>
+        body {
+            background-color: #2d2d2d;
+            font-family: Arial, sans-serif;
+            color: #39ff14;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex; /* Use flexbox to align items */
+        }
+
+        .section {
+            flex: 1; /* Each section takes up equal space */
+            padding: 20px;
+        }
+
+        .image-section {
+            background-color: #1f1f1f; /* Dark background color */
+        }
+
+        .image-box {
+            height: 300px;
+            background-color: #444; /* Placeholder color for image */
+        }
+
+        .text-section {
+            background-color: #1f1f1f; /* Dark background color */
+            display: flex;
+            flex-direction: column; /* Arrange text area vertically */
+            justify-content: center; /* Center text vertically */
+        }
+
+        .text-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .text-content {
+            color: #ccc;
+        }
+    </style>
+
 </head>
+
 <body>
-    <title>Andrew!!!!!!</title>
+
+    <div class="container">
+        <div class="section image-section">
+            <div class="image-box">
+                <!-- Placeholder for image -->
+            </div>
+        </div>
+
+        <div class="section text-section">
+            <h2 class="text-header">More About Me</h2>
+            <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis libero quis mauris dignissim scelerisque ut sit amet dui. Nullam sodales dui at risus fermentum, vel interdum libero finibus. Nam et nulla sit amet turpis commodo sodales vel nec nunc. Nullam id metus vel nisl vestibulum posuere. Cras ullamcorper ultrices justo, a volutpat libero mollis eu. Nullam ut erat dapibus, tincidunt velit id, accumsan libero. Aliquam at lorem aliquam, consectetur ligula at, sollicitudin mi. Mauris fermentum ipsum vel suscipit facilisis. Duis et ligula malesuada, varius enim vel, aliquam sem. Nunc ultricies orci quis risus hendrerit, at dapibus sapien sodales.</p>
+        </div>
+    </div>
+
 </body>
 </html>
