@@ -1,14 +1,15 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Another Page</title>
-
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         body {
-            background-color: #2d2d2d;
-            font-family: Arial, sans-serif;
-            color: #39ff14;
+            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
@@ -17,56 +18,122 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            display: flex; /* Use flexbox to align items */
         }
 
-        .section {
-            flex: 1; /* Each section takes up equal space */
-            padding: 20px;
-        }
-
-        .image-section {
-            background-color: #1f1f1f; /* Dark background color */
-        }
-
-        .image-box {
-            height: 300px;
-            background-color: #444; /* Placeholder color for image */
-        }
-
-        .text-section {
-            background-color: #1f1f1f; /* Dark background color */
+        .header {
             display: flex;
-            flex-direction: column; /* Arrange text area vertically */
-            justify-content: center; /* Center text vertically */
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
         }
 
-        .text-header {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .text-content {
-            color: #ccc;
+        .logo i {
+            font-size: 40px;
+            color: #f0f0f0;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .links li {
+            margin-left: 20px;
+        }
+
+        .links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #00b8d4;
+        }
+
+        .about-me {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 40px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            color: #00b8d4;
+            margin-top: 0;
+        }
+
+        .about-content p {
+            color: #f0f0f0;
+            line-height: 1.6;
         }
     </style>
-
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="section image-section">
-            <div class="image-box">
-                <!-- Placeholder for image -->
-            </div>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
         </div>
-
-        <div class="section text-section">
-            <h2 class="text-header">More About Me</h2>
-            <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis libero quis mauris dignissim scelerisque ut sit amet dui. Nullam sodales dui at risus fermentum, vel interdum libero finibus. Nam et nulla sit amet turpis commodo sodales vel nec nunc. Nullam id metus vel nisl vestibulum posuere. Cras ullamcorper ultrices justo, a volutpat libero mollis eu. Nullam ut erat dapibus, tincidunt velit id, accumsan libero. Aliquam at lorem aliquam, consectetur ligula at, sollicitudin mi. Mauris fermentum ipsum vel suscipit facilisis. Duis et ligula malesuada, varius enim vel, aliquam sem. Nunc ultricies orci quis risus hendrerit, at dapibus sapien sodales.</p>
+        <h1 class="name">About Me</h1>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
         </div>
     </div>
 
+    <div class="about-me">
+        <div class="profile-image">
+            <!-- Add your image here -->
+            <img src="CoolPhotoOfMe.jpg" alt="How cool I look">
+        </div>
+        <div class="about-content">
+            <h2>Who am I?</h2>
+            <p>Hi, I'm Andrew! I am currently a high schooler in Oregon. I am interested in Cybersecurity and Astronomy. There will be a resume somewhere on this site, but I'm just going to mention some of the cool things I have done. I went to the regional science fair for studying microplastics, I attended the 241st meeting of the American Astronomical Society, and I am always trying new things!!! I don't know exactly what I will be using this site for, but it will be cool! If you want to contact me, you can email me at ajdwashburn@gmail.com</p>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

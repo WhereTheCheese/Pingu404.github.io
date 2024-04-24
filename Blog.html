@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Andrew's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo i {
+            font-size: 40px;
+            color: #f0f0f0;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .links li {
+            margin-left: 20px;
+        }
+
+        .links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #00b8d4;
+        }
+
+        .blog-posts {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-posts h2 {
+            color: #00b8d4;
+            margin-top: 0;
+        }
+
+        .blog-posts ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blog-posts li {
+            margin-bottom: 20px;
+        }
+
+        .blog-posts a {
+            color: #f0f0f0;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .blog-posts a:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00b8d4;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .blog-posts a:hover:before {
+            visibility: visible;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <h1 class="name">Andrew's Blog</h1>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="blog-posts">
+        <h2>Blog Posts</h2>
+        <ul>
+            <li><a href="SideloadOnIOS.html">My Trip to the Science Fair</a></li>
+            <li><a href="#">How to spoof iOS location coming soon</a></li>
+            <li><a href="#">Even more coming soon</a></li>
+            <!-- Add more blog post links here -->
+        </ul>
+    </div>
+</div>
+</body>
+</html>

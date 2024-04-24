@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AltStore and JIT on iOS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo i {
+            font-size: 40px;
+            color: #f0f0f0;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .links li {
+            margin-left: 20px;
+        }
+
+        .links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #00b8d4;
+        }
+
+        .about-me {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 40px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            color: #00b8d4;
+            margin-top: 0;
+        }
+
+        .about-content p {
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <h1 class="name">AltStore and JIT on iOS</h1>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="about-me">
+        <div class="about-content">
+            <p>After experimenting with 4 different OS's, multiple phones, and countless github projects I have finally gotten Wii Sports running on my IPhone! Here is a basic tutorial. I didn't create any of the tools below, but I had to spend lots of time figuring out how to use them because many of them didn't have straightforward tutorials or had bugs that I had to find work-arounds for. If you enjoy this tutorial please let me know and share it. If you have any trouble please feel free to email about it :) Have fun!</p>
+
+            <h2>What is AltStore and iOS17-JIT-WIN?</h2>
+            <p>AltStore is an alternative app store for iOS that does not involve jailbreaking your phone. You can download it from safari in the EU, but in the US the only way to download it is by sideloading it onto your phone. Sadly it only stays installed on your phone for 7 days then you have to "refresh the apps" AltStore simulates an apple development engine so they can restrict how long you can run it for. iOS17-JIT-WIN only stays installed on your phone as long as it is in your system's RAM. This program pretends to be a XCode debugger and is able to enable JIT.</p>
+
+            <h2>Part 1: Download Loading and Installing Altstore on your IPhone</h2>
+            <p>1) Download iTunes and iCloud from Apple's website; links to the sites are below. It is important to download directly from Apple's website because it allows AltStore to edit the files easier than if downloaded from the Microsoft store. Make note of the install path of iTunes, if AltStore can not find the download location you can direct it manually.</p>
+            <p>iTunes: <a href="https://www.apple.com/itunes/download/win64" target="_blank">https://www.apple.com/itunes/download/win64</a><br>
+            iCloud: <a href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe" target="_blank">https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe</a></p>
+
+            <p>2) Go through the sign in process of iCloud, it is not necessary to sign into iTunes, but it may help you do other steps faster later.</p>
+
+            <p>3) Plug your IPhone into your PC, if you see a popup asking you to trust device, trust it.</p>
+
+            <p>4) Download the AltStore installer from the link below.<br>
+            AltStore: <a href="https://cdn.altstore.io/file/altstore/altinstaller.zip" target="_blank">https://cdn.altstore.io/file/altstore/altinstaller.zip</a></p>
+
+            <p>5) Extract the files to a new folder and run "Setup.Exe" Allow all of the popups that appear.</p>
+
+            <p>6) Go to the windows search bar, then search for "AltServer and run the file as administrator.</p>
+            <img src="Alt_Search.png" alt="AltServer Search">
+
+            <p>7) Then go to the bottom right of your screen and open AltStore and click install AltStore then select your device. Then when prompted sign in with your Apple ID and password.</p>
+            <img src="AltStoreA.png" alt="AltStore App">
+
+            <p>8) Now on your phone:<br>
+            Go to Settings → General → VPN & Device Management → and trust your name<br>
+            Then go to back to Settings → Privacy & Security → Developer Mode → and turn it on<br>
+            Your phone will then prompt you to restart your phone. When it turns back on, enable developer mode.</p>
+            <img src="Steps.jpg" alt="Step 1">
+            <img src="image.jpg" alt="Step 2">
+
+            <p>9) Now while your phone is plugged into your PC you can download Apps from AltStore :) (if you are still not seeing AltStore on your phone, try to install it again and it should appear)</p>
+
+            <h2>Part 2: Downloading Dolphin Emulator</h2>
+            <p>Now to download Dolphin Emulator.</p>
+
+            <p>1) Open Altstore and in the brows menu at the top right click on scores.</p>
+
+            <p>2) Now add the Source "OatmealDOME's AltStore Source" and if you want minecraft Java edition you can also add "PojavLauncher Repository" (you will need a minecraft java account)</p>
+            <img src="Add_Scorce.jpg" alt="Add Source">
+
+            <p>3) Then go download PojavLauncher and DolphiniOS. (Download DolphiniOS public beta if you have an Iphone 15) You will be prompted to sign into your iCloud account again.</p>
+
+            <p>4) Now put your wii sports ISO that you ripped from your wii sports disk in files</p>
+
+            <p>5) Now click the plus button in the top right of dolphin and select your ISO</p>
+
+            <h2>Part 3: Enabling JIT on IOS 17+</h2>
+            <p>Now you need to enable JIT on IOS. JIT stands for just-in-time decompling. Basically it turns the code from an app to code that can be run on your phone. Android has it enabled natively, but IOS doesn't. The only default iOS app that uses JIT is safari. Once JIT is enabled on an app it will only stay active as long as the app is not closed or overwritten in the RAM.</p>
+
+            <p>1) Download both python and iOS17-JIT-WIN from the links below. Make sure to check the box "Add to path" during python install. It will not work if you don't do this.</p>
+            <p>Python: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a><br>
+                iOS17-JIT-WIN: <a href="https://github.com/fritzlb/iOS17-JIT-WIN/archive/refs/heads/main.zip" target="_blank">https://github.com/fritzlb/iOS17-JIT-WIN/archive/refs/heads/main.zip</a></p>
+                
+                <img src="Python.png" alt="Python Install">
+                
+                <p>2) After downloading python and iOS17-JIT-WIN, unzip iOS17-JIT-WIN and run "install.bin" after it is installed it will prompt you to restart your PC.</p>
+                <img src="Install123.png" alt="iOS17-JIT-WIN Install">
+                
+                <p>3) Once your PC is back on, and your phone is plugged into your PC with iTunes open, run the file "Open Terminal Here.bin" in the iOS17-JIT-WIN folder</p>
+                
+                <p>4) Then in the AltStore app go to My Apps → View App ID's → and then note the DolphiniOS app ID. Ex: me.oatmealdome.dolphinios-njb.[Some numbers and letters here]</p>
+                <img src="AltStoreDolphin.jpg" alt="AltStore Dolphin App ID">
+                
+                <p>5) Now in the terminal that you opened before, type in "python jit_enabler_better.py {Your App ID_id}" and run the file. I like to type it out in a different document and copy and pasting it in due to possible errors. If you encounter an error or bug here I will cover some below. If you still have problems, please reach out to me.</p>
+                
+                <p>Ex: python jit_enabler_better.py me.oatmealdome.DolphiniOS-njb.8L76Y4BXK6</p>
+                
+                <p>6) Once you see "done" in the terminal, then in the Dolphin Emulator app run the game!</p>
+                
+                <h2>Keeping Games updated/From getting uninstalled</h2>
+                <p>Because we are using a test development platform to add these programs to our phones, Apple only lets us keep them for 7 days at a time before the downloads are removed. Typically to "refresh" the app you need to plug it back into your PC, but AltStore has a feature that will do this over WiFi.</p>
+                <p>1) Open the Itunes app on your PC</p>
+                <p>2) Go to the top left and click on the little button with an image of a phone</p>
+                <img src="fone.png" alt="iTunes Phone Button">
+                
+                <p>3) Scroll to the bottom and turn on "Sync with this phone over Wi-Fi" then click apply at the bottom</p>
+                <img src="fone2.png" alt="iTunes WiFi Sync">
+                <p>Now you should be able to download apps as long as you are on the same wifi as your PC running the AltStore app</p>
+                
+                <p>If this is not working try</p>
+                <p>1) Open windows search bar and type "Windows Firewall" then open it</p>
+                <p>2) Next, select "Advanced Settings" on the sidebar</p>
+                <img src="fone3.png" alt="Windows Firewall">
+                <p>3) Now go to Inbound rules and scroll down to AltServer. Make sure it is enabled.</p>
+                <img src="fone4.png" alt="AltServer Firewall Rule">
+                <p>Now AltServer should work</p>
+                
+                <h2>Typical Bugs:</h2>
+                
+                <h3>"Device is not connected"</h3>
+                <p>If the terminal output begins with "device is not connected" unplug and plug back in your phone, and make sure to trust your device. If that does not work</p>
+                <p>1) Go to windows search</p>
+                <p>2) Search for "Device manager" and open it</p>
+                <p>3) Scroll down to "Universal Serial Bus Devices" and open it</p>
+                <p>4) Right click and uninstall both "Apple Mobile Device USB Composite Device(WeTest)" and "Apple Mobile Device USB Device" (Optional, but it may help to restart your computer at this point)</p>
+                <p>5) When your computer turn back on return to Part 3, step 5 and continue from there</p>
+                
+                <h3>"Can not find Itunes file" when installing AltStore</h3>
+                <p>If the AltStore installer can not find the location where you installed iTunes</p>
+                <p>1) Find where you wrote down the install location of itunes (if you forgot to do this uninstall and reinstall iTunes in control panel)</p>
+                <p>2) Use the "Find directory" button and direct it to the file that you noted earlier</p>
+                
+                <p>If you are encountering an issue that cannot be solved from this, try to use the links below for more specific problems</p>
+                <p><a href="https://faq.altstore.io/getting-started/troubleshooting-guide" target="_blank">https://faq.altstore.io/getting-started/troubleshooting-guide</a><br>
+                <a href="https://github.com/fritzlb/iOS17-JIT-WIN?tab=readme-ov-file" target="_blank">https://github.com/fritzlb/iOS17-JIT-WIN?tab=readme-ov-file</a></p>
+                
+                        </div>
+                    </div>
+                </div>
+                </body>
+                </html>
